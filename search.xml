@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>python之copy</title>
+    <url>/python/python%E4%B9%8Bcopy/</url>
+    <content><![CDATA[<h2 id="Python中的引用、浅拷贝和深拷贝"><a href="#Python中的引用、浅拷贝和深拷贝" class="headerlink" title="Python中的引用、浅拷贝和深拷贝"></a>Python中的引用、浅拷贝和深拷贝</h2><p>在python中，有一句话：<em>一切皆为对象，一切皆为对象的引用</em>，所以<br>只要记住这句话就很容易清楚python中的引用、浅拷贝和深拷贝了。</p>
+<h3 id="1、引用"><a href="#1、引用" class="headerlink" title="1、引用"></a>1、引用</h3><p>python中的引用是经常使用的，python的引用可以节省内存，加快速度，因为它不需要开辟内存空间。例如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line">b = <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>这表示让 a 这个变量去指向一个地址，这个地址保存着数据为 1，让变量 b 也去指向这个地址，那么通过 b 我们一样可以找到数据 1，通过地址的指向来<br>来查找到数据，这就是python中的引用；</p>
+<h3 id="2、浅拷贝"><a href="#2、浅拷贝" class="headerlink" title="2、浅拷贝"></a>2、浅拷贝</h3><p>浅拷贝 copy.copy()<br>浅拷贝保存的是数据的地址，不保存内容，浅拷贝是需要开辟单独的内存空间来存储地址的，它不能保证<br>数据的独立性。例如：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">b = copy.copy(a)</span><br><span class="line"><span class="comment"># a 的值[1, 2, 3]</span></span><br><span class="line"><span class="comment"># b 的值[1, 2, 3]</span></span><br><span class="line">id(a)  <span class="comment"># 1397274473</span></span><br><span class="line">id(b)  <span class="comment"># 1397274545</span></span><br></pre></td></tr></table></figure>
+<p>可以看出 b 的数据和 a 的数据一样，但是 b 的地址和 a 的地址不相同，而且 b 的地址里保存的是列表里元素 1， 2， 3 的地址，b 通过保存的地址信息来获取数据1, 2, 3 可以通过下面的例子得出：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">id(a)  <span class="comment"># 1397274473</span></span><br><span class="line">id(b)  <span class="comment"># 1397274545</span></span><br><span class="line">id(a[<span class="number">0</span>])  <span class="comment"># 20705624</span></span><br><span class="line">id(b[<span class="number">0</span>])  <span class="comment"># 20705624</span></span><br><span class="line">a[<span class="number">0</span>] = <span class="number">8</span></span><br><span class="line">id(a[<span class="number">0</span>])  <span class="comment"># 20705456</span></span><br><span class="line">id(b[<span class="number">0</span>])  <span class="comment"># 20705624</span></span><br></pre></td></tr></table></figure>
+<p>可以看出列表a 和列表 b 里面的元素 1 都指向着同一个地址，当列表 a 的第一个元素的值变为8时，即指向一个新的保存数据为 8 的地址时，列表b 的第一个元素仍然保存的是元素 1 的地址，此时可以看出，浅拷贝只是把数据的地址保存了，并没有保存数据本身，当列表中如果有元素为可变的列表或字典类时，因为拷贝的是列表或字典所对应的地址，如果列表或字典中有元素发生改变，则浅拷贝的列表也会跟着改变，不能保证数据的独立性：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">c = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]</span><br><span class="line">d = copy.copy(c)</span><br><span class="line"><span class="comment"># c=[1, 2, [3, 4]]</span></span><br><span class="line"><span class="comment"># d=[1, 2, [3, 4]]</span></span><br><span class="line">id(c)  <span class="comment"># 13972747060</span></span><br><span class="line">id(d)  <span class="comment"># 13972745446</span></span><br><span class="line">id(c[<span class="number">2</span>][<span class="number">0</span>])  <span class="comment"># 20705576</span></span><br><span class="line">id(d[<span class="number">2</span>][<span class="number">0</span>])  <span class="comment"># 20705576</span></span><br><span class="line"></span><br><span class="line">c[<span class="number">2</span>].append(<span class="number">5</span>)</span><br><span class="line"><span class="comment"># c=[1, 2, [3, 4, 5]]</span></span><br><span class="line">id(c)  <span class="comment"># 13972747060</span></span><br><span class="line">d <span class="comment"># d=[1, 2, [3, 4, 5]]</span></span><br><span class="line">id(d)  <span class="comment"># 13972745446</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">b = copy.copy(a)</span><br><span class="line">a.append(<span class="number">3</span>)</span><br><span class="line">a <span class="comment"># [1, 2, 3]</span></span><br><span class="line">b <span class="comment"># [1, 2]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3、深拷贝"><a href="#3、深拷贝" class="headerlink" title="3、深拷贝"></a>3、深拷贝</h3><p>深拷贝copy.deepcopy()<br>python中，深拷贝在浅拷贝的基础上更进一步，深拷贝保存的是数据的本身，一旦进行深拷贝，则拷贝后的内容不仅和原本的内容完全一样，而且跟原来的没有任何联系，充分保证了数据的独立性。<br>深拷贝相当于在内存中开辟了一片新的内存，不再用来保存数据的地址，而是用新的地址来保存相同的数据。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]</span><br><span class="line">b = copy.deepcopy(a)</span><br><span class="line"></span><br><span class="line">a  <span class="comment"># [1, 2, [3, 4]]</span></span><br><span class="line">b  <span class="comment"># [1, 2, [3, 4]]</span></span><br><span class="line"></span><br><span class="line">a[<span class="number">2</span>].append(<span class="number">5</span>)</span><br><span class="line">a  <span class="comment"># [1, 2, [3, 4, 5]]</span></span><br><span class="line">b  <span class="comment"># [1, 2, [3, 4]]</span></span><br></pre></td></tr></table></figure>
+<p>可以看出深拷贝是把列表里的数据保存了，和浅拷贝不同，当列表 a 发生改变时，列表 b 并不会跟着改变，这样充分体现了深拷贝可以保证数据的独立性。</p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>-python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>python版布隆过滤器</title>
     <url>/python/python%E7%89%88%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8/</url>
     <content><![CDATA[<h2 id="布隆过滤器介绍"><a href="#布隆过滤器介绍" class="headerlink" title="布隆过滤器介绍"></a>布隆过滤器介绍</h2><p>本质上布隆过滤器是一种数据结构，比较巧妙的概率型数据结构（probabilistic data structure），特点是高效地插入和查询，可以用来告诉你 “某样东西一定不存在或者可能存在”。</p>
