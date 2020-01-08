@@ -2,16 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://lesliekung.com/404.html</loc>
+    <loc>http://lesliekung.com/python/python%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97os%E5%92%8Csys/</loc>
     
-    <lastmod>2020-01-02T11:49:53.502Z</lastmod>
+    <lastmod>2020-01-08T12:31:53.468Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lesliekung.com/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/mysql%E6%95%B0%E6%8D%AE%E5%BA%93table/</loc>
+    
+    <lastmod>2020-01-08T09:54:44.758Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lesliekung.com/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/mysql%E6%95%B0%E6%8D%AE%E5%BA%93database/</loc>
+    
+    <lastmod>2020-01-08T09:41:00.513Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lesliekung.com/git/git%E5%AD%A6%E4%B9%A0/</loc>
+    
+    <lastmod>2020-01-08T08:26:42.679Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://lesliekung.com/docker/docker%E5%AE%B9%E5%99%A8/</loc>
     
-    <lastmod>2020-01-02T09:19:41.591Z</lastmod>
+    <lastmod>2020-01-08T06:57:03.378Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lesliekung.com/404.html</loc>
+    
+    <lastmod>2020-01-02T11:49:53.502Z</lastmod>
     
   </url>
   

@@ -1,12 +1,239 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>docker容器</title>
-    <url>/docker/docker%E5%AE%B9%E5%99%A8/</url>
-    <content><![CDATA[<h2 id="docker容器"><a href="#docker容器" class="headerlink" title="docker容器"></a>docker容器</h2><h3 id="容器介绍"><a href="#容器介绍" class="headerlink" title="容器介绍"></a>容器介绍</h3><p>&emsp;&emsp;容器是独立运行的一个或一组应用，以及它们的运行态环境。对应的，虚拟机可以理解为模拟运行的一整套操作系统和跑在上面的应用。</p>
-<h3 id="新建启动容器"><a href="#新建启动容器" class="headerlink" title="新建启动容器"></a>新建启动容器</h3><p>&emsp;&emsp;启动容器的主要命令是docker run，下面的命令输出一个“hello world”，之后终止容器</p>
+    <title>python内置模块os和sys</title>
+    <url>/python/python%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97os%E5%92%8Csys/</url>
+    <content><![CDATA[<h2 id="python内置模块os"><a href="#python内置模块os" class="headerlink" title="python内置模块os"></a>python内置模块os</h2><h3 id="返回当前运行文件的绝对路径"><a href="#返回当前运行文件的绝对路径" class="headerlink" title="返回当前运行文件的绝对路径"></a>返回当前运行文件的绝对路径</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">os.path.abspath(__file__)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">abs_path = os.path.dirname(os.path.dirname(os.path.abspat(__file__)))</span><br><span class="line">sys.path.append(abs_path)</span><br></pre></td></tr></table></figure>
+<h3 id="返回path的目录。其实就是os-path-split-path-的第一个元素"><a href="#返回path的目录。其实就是os-path-split-path-的第一个元素" class="headerlink" title="返回path的目录。其实就是os.path.split(path)的第一个元素"></a>返回path的目录。其实就是os.path.split(path)的第一个元素</h3><a id="more"></a>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">os</span>.<span class="built_in">path</span>.dirname(<span class="built_in">path</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="将path分割成目录和文件名二元组返回"><a href="#将path分割成目录和文件名二元组返回" class="headerlink" title="将path分割成目录和文件名二元组返回"></a>将path分割成目录和文件名二元组返回</h3><figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">os</span>.<span class="built_in">path</span>.split(<span class="built_in">path</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="返回path最后的文件名。如何path以／或-结尾，那么就会返回空值。即os-path-split-path-的第二个元素"><a href="#返回path最后的文件名。如何path以／或-结尾，那么就会返回空值。即os-path-split-path-的第二个元素" class="headerlink" title="返回path最后的文件名。如何path以／或\结尾，那么就会返回空值。即os.path.split(path)的第二个元素"></a>返回path最后的文件名。如何path以／或\结尾，那么就会返回空值。即os.path.split(path)的第二个元素</h3><figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">os</span>.<span class="built_in">path</span>.basename(<span class="built_in">path</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="返回list中，所有path共有的最长的路径"><a href="#返回list中，所有path共有的最长的路径" class="headerlink" title="返回list中，所有path共有的最长的路径"></a>返回list中，所有path共有的最长的路径</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">os</span><span class="selector-class">.path</span><span class="selector-class">.commonprefix</span>(<span class="selector-tag">list</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="如果path存在，返回True；如果path不存在，返回False"><a href="#如果path存在，返回True；如果path不存在，返回False" class="headerlink" title="如果path存在，返回True；如果path不存在，返回False"></a>如果path存在，返回True；如果path不存在，返回False</h3><figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">os</span>.<span class="built_in">path</span>.exists(<span class="built_in">path</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="如果path是绝对路径，返回True"><a href="#如果path是绝对路径，返回True" class="headerlink" title="如果path是绝对路径，返回True"></a>如果path是绝对路径，返回True</h3><figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">os</span>.<span class="built_in">path</span>.isabs(<span class="built_in">path</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="如果path是一个存在的文件，返回True。否则返回False"><a href="#如果path是一个存在的文件，返回True。否则返回False" class="headerlink" title="如果path是一个存在的文件，返回True。否则返回False"></a>如果path是一个存在的文件，返回True。否则返回False</h3><figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">os</span>.<span class="built_in">path</span>.isfile(<span class="built_in">path</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="如果path是一个存在的目录，则返回True。否则返回False"><a href="#如果path是一个存在的目录，则返回True。否则返回False" class="headerlink" title="如果path是一个存在的目录，则返回True。否则返回False"></a>如果path是一个存在的目录，则返回True。否则返回False</h3><figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">os</span>.<span class="built_in">path</span>.isdir(<span class="built_in">path</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="将多个路径组合后返回，第一个绝对路径之前的参数将被忽略"><a href="#将多个路径组合后返回，第一个绝对路径之前的参数将被忽略" class="headerlink" title="将多个路径组合后返回，第一个绝对路径之前的参数将被忽略"></a>将多个路径组合后返回，第一个绝对路径之前的参数将被忽略</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">os</span><span class="selector-class">.path</span><span class="selector-class">.join</span>(<span class="selector-tag">path1</span><span class="selector-attr">[, path2[, ...]</span>])</span><br></pre></td></tr></table></figure>
+<h3 id="规范化路径"><a href="#规范化路径" class="headerlink" title="规范化路径"></a>规范化路径</h3><figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">os</span>.<span class="built_in">path</span>.normpath(<span class="built_in">path</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="分离文件名与扩展名；默认返回-fname-fextension-元组，可做分片操作"><a href="#分离文件名与扩展名；默认返回-fname-fextension-元组，可做分片操作" class="headerlink" title="分离文件名与扩展名；默认返回(fname,fextension)元组，可做分片操作"></a>分离文件名与扩展名；默认返回(fname,fextension)元组，可做分片操作</h3><figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">os</span>.<span class="built_in">path</span>.splitext(<span class="built_in">path</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="返回path的文件的大小（字节）"><a href="#返回path的文件的大小（字节）" class="headerlink" title="返回path的文件的大小（字节）"></a>返回path的文件的大小（字节）</h3><figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">os</span>.<span class="built_in">path</span>.getsize(<span class="built_in">path</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="返回path所指向的文件或者目录的最后存取时间"><a href="#返回path所指向的文件或者目录的最后存取时间" class="headerlink" title="返回path所指向的文件或者目录的最后存取时间"></a>返回path所指向的文件或者目录的最后存取时间</h3><figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">os</span>.<span class="built_in">path</span>.getatime(<span class="built_in">path</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="返回path所指向的文件或者目录的最后修改时间"><a href="#返回path所指向的文件或者目录的最后修改时间" class="headerlink" title="返回path所指向的文件或者目录的最后修改时间"></a>返回path所指向的文件或者目录的最后修改时间</h3><figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">os</span>.<span class="built_in">path</span>.getmtime(<span class="built_in">path</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="python内置模块sys"><a href="#python内置模块sys" class="headerlink" title="python内置模块sys"></a>python内置模块sys</h2><h3 id="获取命令行参数"><a href="#获取命令行参数" class="headerlink" title="获取命令行参数"></a>获取命令行参数</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">sys</span><span class="selector-class">.argv</span></span><br></pre></td></tr></table></figure>
+<h3 id="程序退出"><a href="#程序退出" class="headerlink" title="程序退出"></a>程序退出</h3><p>正常退出是sys.exit(0)</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sys.<span class="keyword">exit</span>(n)</span><br></pre></td></tr></table></figure>
+<h3 id="获取python解释程序的版本信息"><a href="#获取python解释程序的版本信息" class="headerlink" title="获取python解释程序的版本信息"></a>获取python解释程序的版本信息</h3><figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">sys.<span class="built_in">version</span></span><br></pre></td></tr></table></figure>
+<h3 id="获取最大的int值"><a href="#获取最大的int值" class="headerlink" title="获取最大的int值"></a>获取最大的int值</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">sys</span><span class="selector-class">.maxsize</span></span><br></pre></td></tr></table></figure>
+<h3 id="返回模块的搜索路径"><a href="#返回模块的搜索路径" class="headerlink" title="返回模块的搜索路径"></a>返回模块的搜索路径</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">sys</span><span class="selector-class">.path</span></span><br></pre></td></tr></table></figure>
+<h3 id="返回操作系统的名称"><a href="#返回操作系统的名称" class="headerlink" title="返回操作系统的名称"></a>返回操作系统的名称</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">sys</span><span class="selector-class">.platform</span></span><br></pre></td></tr></table></figure>
+<h3 id="标准输出、标准输入和标准错误输出"><a href="#标准输出、标准输入和标准错误输出" class="headerlink" title="标准输出、标准输入和标准错误输出"></a>标准输出、标准输入和标准错误输出</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">sys</span><span class="selector-class">.stdout</span></span><br><span class="line"><span class="selector-tag">sys</span><span class="selector-class">.stdin</span></span><br><span class="line"><span class="selector-tag">sys</span><span class="selector-class">.stderror</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="python脚本传参"><a href="#python脚本传参" class="headerlink" title="python脚本传参"></a>python脚本传参</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"><span class="comment"># 创建传参对象</span></span><br><span class="line">parser = argparse.ArgumentParser(description=<span class="string">'脚本的描述信息'</span>)</span><br><span class="line"><span class="comment"># 定义参数 参数名字、类型和默认值</span></span><br><span class="line">parser.add_argument(<span class="string">'--bank'</span>, type=str, default=<span class="literal">None</span>)</span><br><span class="line">parser.add_argument(<span class="string">'--account'</span>, type=str, default=<span class="literal">None</span>)</span><br><span class="line"><span class="comment"># 获取参数对象</span></span><br><span class="line">args = parser.parse_args()</span><br><span class="line"><span class="comment"># 通过对象属性的方法获取参数的值</span></span><br><span class="line">bank_name = args.bank</span><br><span class="line">account_no = args.account</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql数据库table</title>
+    <url>/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/mysql%E6%95%B0%E6%8D%AE%E5%BA%93table/</url>
+    <content><![CDATA[<h2 id="一、数据库关于表的操作"><a href="#一、数据库关于表的操作" class="headerlink" title="一、数据库关于表的操作"></a>一、数据库关于表的操作</h2><h3 id="查看所有表"><a href="#查看所有表" class="headerlink" title="查看所有表"></a>查看所有表</h3><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">tables</span></span><br></pre></td></tr></table></figure>
+<h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> tablename(</span><br><span class="line">        <span class="keyword">id</span> <span class="built_in">int</span> <span class="keyword">unsigned</span> <span class="keyword">not</span> <span class="literal">null</span> primary <span class="keyword">key</span> auto_increment,</span><br><span class="line">        <span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">not</span> <span class="literal">null</span></span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<ul>
+<li>– int unsigned 无符号整数 表示正数</li>
+<li>– auto_increment 表示自动增长</li>
+<li>– not null 表示不能为空</li>
+<li>– primary key 表示主键</li>
+<li>– default 默认值</li>
+<li>– create table 数据表名字 (字段 类型 约束[, 字段 类型 约束])</li>
+</ul>
+<h3 id="查看表结构"><a href="#查看表结构" class="headerlink" title="查看表结构"></a>查看表结构</h3><figure class="highlight axapta"><table><tr><td class="code"><pre><span class="line"><span class="keyword">desc</span> tablename</span><br></pre></td></tr></table></figure>
+<h3 id="查看表的创建语句"><a href="#查看表的创建语句" class="headerlink" title="查看表的创建语句"></a>查看表的创建语句</h3><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">create</span> <span class="keyword">table</span> tablename</span><br></pre></td></tr></table></figure>
+<h3 id="查看表中字段字符集"><a href="#查看表中字段字符集" class="headerlink" title="查看表中字段字符集"></a>查看表中字段字符集</h3><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SHOW</span> <span class="keyword">FULL</span> <span class="keyword">COLUMNS</span> <span class="keyword">FROM</span> tablename</span><br></pre></td></tr></table></figure>
+<h3 id="修改表"><a href="#修改表" class="headerlink" title="修改表"></a>修改表</h3><ol>
+<li>添加字段 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">alter table 表名 add 字段名 约束 (after 字段名)</span><br><span class="line"><span class="comment"># demo</span></span><br><span class="line">alter table student add name varchar(20)</span><br></pre></td></tr></table></figure></li>
+<li>修改字段不重命名 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">alter table 表名 modify 字段名 约束</span><br><span class="line"><span class="comment"># demo 修改字段长度</span></span><br><span class="line">alter table car_info modify column price bigint(64)</span><br><span class="line"><span class="comment"># demo 修改字段类型</span></span><br><span class="line">ALTER TABLE car_info MODIFY `description` varchar(2048) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci</span><br></pre></td></tr></table></figure></li>
+<li>修改字段重命名 <figure class="highlight gams"><table><tr><td class="code"><pre><span class="line">alter <span class="keyword">table</span> 表名 change 旧字段名 新字段名 约束</span><br></pre></td></tr></table></figure></li>
+<li>删除字段 <figure class="highlight gams"><table><tr><td class="code"><pre><span class="line">alter <span class="keyword">table</span> 表名 drop 字段名</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="添加索引"><a href="#添加索引" class="headerlink" title="添加索引"></a>添加索引</h3><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> <span class="keyword">index</span> 索引名(<span class="string">'字段名'</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="添加唯一属性"><a href="#添加唯一属性" class="headerlink" title="添加唯一属性"></a>添加唯一属性</h3><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> <span class="keyword">unique</span>(字段名)</span><br></pre></td></tr></table></figure>
+
+<h3 id="添加创建时间和更新时间索引"><a href="#添加创建时间和更新时间索引" class="headerlink" title="添加创建时间和更新时间索引"></a>添加创建时间和更新时间索引</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> <span class="keyword">COLUMN</span> ctime <span class="built_in">timestamp</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="keyword">CURRENT_TIMESTAMP</span>;</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> <span class="keyword">index</span> ctime_index(<span class="string">`ctime`</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> <span class="keyword">COLUMN</span> mtime <span class="built_in">timestamp</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="keyword">CURRENT_TIMESTAMP</span> <span class="keyword">ON</span> <span class="keyword">UPDATE</span> <span class="keyword">CURRENT_TIMESTAMP</span>;</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> <span class="keyword">index</span> mtime_index(<span class="string">`mtime`</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="mysql插入当前时间"><a href="#mysql插入当前时间" class="headerlink" title="mysql插入当前时间"></a>mysql插入当前时间</h3><ul>
+<li>now()函数以yyyy-mm-dd hh:mm:ss返回当前的日期时间，可以直接存到datetime字段中</li>
+<li>curdate()以yyyy-mm-dd的格式返回今天的日期，可以直接存到date字段中 </li>
+<li>curtime()以hh:mm:ss的格式返回当前的时间，可以直接存到time字段中</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> test_date(t_date <span class="built_in">date</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> test_date <span class="keyword">values</span>(<span class="keyword">curdate</span>())</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>数据库</category>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql数据库database</title>
+    <url>/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/mysql%E6%95%B0%E6%8D%AE%E5%BA%93database/</url>
+    <content><![CDATA[<h2 id="一、数据库常见操作"><a href="#一、数据库常见操作" class="headerlink" title="一、数据库常见操作"></a>一、数据库常见操作</h2><h3 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mysql -h主机 -u用户名 -p密码</span><br></pre></td></tr></table></figure>
+<h3 id="退出客户端"><a href="#退出客户端" class="headerlink" title="退出客户端"></a>退出客户端</h3><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="keyword">exit</span><span class="regexp">/quit/</span>ctrl+d</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 
+<h3 id="显示当前时间"><a href="#显示当前时间" class="headerlink" title="显示当前时间"></a>显示当前时间</h3><figure class="highlight isbl"><table><tr><td class="code"><pre><span class="line"><span class="variable">select</span> <span class="function"><span class="title"><span class="built_in">now</span></span>()</span></span><br></pre></td></tr></table></figure>
+<h3 id="显示数据库版本"><a href="#显示数据库版本" class="headerlink" title="显示数据库版本"></a>显示数据库版本</h3><figure class="highlight isbl"><table><tr><td class="code"><pre><span class="line"><span class="variable">select</span> <span class="function"><span class="title">version</span>()</span></span><br></pre></td></tr></table></figure>
+<h3 id="查看当前使用的数据库"><a href="#查看当前使用的数据库" class="headerlink" title="查看当前使用的数据库"></a>查看当前使用的数据库</h3><figure class="highlight isbl"><table><tr><td class="code"><pre><span class="line"><span class="variable">select</span> <span class="function"><span class="title">database</span>()</span></span><br></pre></td></tr></table></figure>
+<h3 id="查看所有数据库"><a href="#查看所有数据库" class="headerlink" title="查看所有数据库"></a>查看所有数据库</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">databases</span></span><br></pre></td></tr></table></figure>
+<h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">create database 数据库名<span class="built_in"> default </span>character <span class="builtin-name">set</span> utf8mb4 collate utf8mb4_unicode_ci</span><br></pre></td></tr></table></figure>
+<h3 id="查看数据库创建语句"><a href="#查看数据库创建语句" class="headerlink" title="查看数据库创建语句"></a>查看数据库创建语句</h3><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">create</span> <span class="keyword">database</span> 数据库名</span><br></pre></td></tr></table></figure>
+<h3 id="切换数据库"><a href="#切换数据库" class="headerlink" title="切换数据库"></a>切换数据库</h3><figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">use</span> 数据库名</span><br></pre></td></tr></table></figure>
+<h3 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h3><figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">database</span> 数据库名</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、创建用户-amp-授权"><a href="#二、创建用户-amp-授权" class="headerlink" title="二、创建用户&amp;授权"></a>二、创建用户&amp;授权</h2><h3 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">create<span class="built_in"> user </span><span class="string">'username'</span>@<span class="string">'host'</span> identified by <span class="string">'password'</span></span><br></pre></td></tr></table></figure>
+<h3 id="授权"><a href="#授权" class="headerlink" title="授权"></a>授权</h3><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">privileges</span> <span class="keyword">on</span> 数据库名.表名 <span class="keyword">to</span> <span class="string">'username'</span>@<span class="string">'host'</span></span><br></pre></td></tr></table></figure>
+<h3 id="用户创建并授权"><a href="#用户创建并授权" class="headerlink" title="用户创建并授权"></a>用户创建并授权</h3><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">privileges</span> <span class="keyword">on</span> <span class="keyword">database</span>.<span class="keyword">table</span> <span class="keyword">to</span> <span class="string">'username'</span>@<span class="string">'host'</span> identified <span class="keyword">by</span> <span class="string">'password'</span></span><br></pre></td></tr></table></figure>
+<h3 id="刷新权限"><a href="#刷新权限" class="headerlink" title="刷新权限"></a>刷新权限</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">flush</span> <span class="keyword">privileges</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>localhost 表示只能在本地连，”%” 表示可以在任意一台机器连，”host” 指定ip 表示可以在指定机器上连</li>
+<li>database: 指定数据库，如果是所有数据库可以用 * 代替</li>
+<li>table: 指定表，如果是所有表可以用 * 代替</li>
+<li>all privileges ： 赋予所有权限</li>
+</ul>
+<h3 id="设置-amp-修改用户密码"><a href="#设置-amp-修改用户密码" class="headerlink" title="设置&amp;修改用户密码"></a>设置&amp;修改用户密码</h3><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">set</span> <span class="keyword">password</span> <span class="keyword">for</span> <span class="string">'username'</span>@<span class="string">'host'</span>=<span class="keyword">password</span>(<span class="string">'newpassowrd'</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="撤销用户权限"><a href="#撤销用户权限" class="headerlink" title="撤销用户权限"></a>撤销用户权限</h3><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">REVOKE</span> privilege <span class="keyword">ON</span> databasename.tablename <span class="keyword">FROM</span> <span class="string">'username'</span>@<span class="string">'host'</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>假如你在给用户‘dog’@’localhost’授权的时候是这样的(或类似的): GRANT SELECT ON test.user TO ‘dog’@’localhost’,则在使用REVOKE SELECT ON *.* FROM ‘dog’@’localhost’,命令并不能撤销该用户对test数据库中user表的SELECT 操作</li>
+<li>相反,如果授权使用的是GRANT SELECT ON *.* TO ‘dog’@’localhost’,则REVOKE SELECT ON test.user FROM ‘dog’@’localhost’命令也不能撤销该用户对test数据库中user表的Select 权限</li>
+</ul>
+<h3 id="查看用户权限"><a href="#查看用户权限" class="headerlink" title="查看用户权限"></a>查看用户权限</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">grants</span> <span class="keyword">for</span> <span class="string">'username'</span>@<span class="string">'host'</span></span><br></pre></td></tr></table></figure>
+<h3 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">DROP<span class="built_in"> USER </span><span class="string">'username'</span>@<span class="string">'host'</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="三、ubuntu下MySQL忘记root密码重置"><a href="#三、ubuntu下MySQL忘记root密码重置" class="headerlink" title="三、ubuntu下MySQL忘记root密码重置"></a>三、ubuntu下MySQL忘记root密码重置</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><ol>
+<li>编辑mysqld.cnf文件(需要sudo权限)<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">sudo <span class="keyword">vi</span> /etc/mysql/mysql.<span class="keyword">conf</span>.d/mysqld.<span class="keyword">cnf</span></span><br></pre></td></tr></table></figure></li>
+<li>在文件中的skip-external-locking一行的下面添加一行<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">skip-<span class="keyword">grant</span>-<span class="keyword">tables</span></span><br></pre></td></tr></table></figure></li>
+<li>重启mysql服务<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">sudo<span class="built_in"> service </span>mysql restart</span><br></pre></td></tr></table></figure></li>
+<li>终端输入mysql进入MySQL，输入USE mysql切换至mysql数据库<figure class="highlight gauss"><table><tr><td class="code"><pre><span class="line">mysql  <span class="meta"># 连接mysql服务</span></span><br><span class="line"><span class="keyword">USE</span> mysql  <span class="meta"># 切换到mysql数据库</span></span><br></pre></td></tr></table></figure></li>
+<li>把root用户的密码修改为000000<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> mysql.<span class="keyword">user</span> <span class="keyword">SET</span> authentication_string=<span class="keyword">password</span>(<span class="string">'000000'</span>)<span class="keyword">WHERE</span> <span class="keyword">User</span>=<span class="string">'root'</span> <span class="keyword">AND</span> Host =<span class="string">'localhost'</span></span><br></pre></td></tr></table></figure></li>
+<li>修改字段plugin<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">UPDATE<span class="built_in"> user </span><span class="builtin-name">SET</span> <span class="attribute">plugin</span>=<span class="string">"mysql_native_password"</span></span><br></pre></td></tr></table></figure></li>
+<li>刷新权限<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">flush</span> <span class="keyword">privileges</span></span><br></pre></td></tr></table></figure></li>
+<li>退出<figure class="highlight cos"><table><tr><td class="code"><pre><span class="line"><span class="keyword">quit</span></span><br></pre></td></tr></table></figure></li>
+<li>注释掉第二步中在/etc/mysql/mysql.conf.d/mysqld.cnf文件中添加的一行</li>
+</ol>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><h4 id="利用mysql自带的用户debian-sys-maint进行重置密码，只有Debian或Ubuntu服务器才有，存在于-etc-mysql-debian-cnf文件中"><a href="#利用mysql自带的用户debian-sys-maint进行重置密码，只有Debian或Ubuntu服务器才有，存在于-etc-mysql-debian-cnf文件中" class="headerlink" title="利用mysql自带的用户debian-sys-maint进行重置密码，只有Debian或Ubuntu服务器才有，存在于/etc/mysql/debian.cnf文件中"></a>利用mysql自带的用户debian-sys-maint进行重置密码，只有Debian或Ubuntu服务器才有，存在于/etc/mysql/debian.cnf文件中</h4><ul>
+<li>打开/etc/mysql/目录下的debian.cnf文件，里面包括用户名和密码  <figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">sudo <span class="keyword">vim</span> /etc/mysql/debian.<span class="keyword">cnf</span></span><br></pre></td></tr></table></figure></li>
+<li>使用文件中提供的用户名和密码进入mysql  <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 连接数据库</span></span><br><span class="line">mysql -u debian-sys-maint -p</span><br><span class="line"><span class="comment"># 切换数据库</span></span><br><span class="line">use mysql</span><br><span class="line"><span class="comment"># 修改密码</span></span><br><span class="line">update user <span class="built_in">set</span> authentication_string=password(<span class="string">'123456'</span>) <span class="built_in">where</span> user=<span class="string">'root'</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>数据库</category>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git学习</title>
+    <url>/git/git%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h2 id="git学习总结"><a href="#git学习总结" class="headerlink" title="git学习总结"></a>git学习总结</h2><p>git 作为常用的版本控制管理工具，熟知它的一些常用命令是非常有必要的</p>
+<h3 id="git-生成ssh-key"><a href="#git-生成ssh-key" class="headerlink" title="git 生成ssh key"></a>git 生成ssh key</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">'邮箱'</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="查看日志提交"><a href="#查看日志提交" class="headerlink" title="查看日志提交"></a>查看日志提交</h3><figure class="highlight haml"><table><tr><td class="code"><pre><span class="line">git log</span><br><span class="line">    -<span class="ruby">p  <span class="comment"># 选项展开显示每次提交的内容差异</span></span></span><br><span class="line"><span class="ruby">    -<span class="number">2</span>  <span class="comment"># 仅显示最近的两次更新</span></span></span><br><span class="line"><span class="ruby">    --stat  <span class="comment"># 显示每次更新的文件修改统计信息。</span></span></span><br><span class="line"><span class="ruby">    --shortstat  <span class="comment"># 只显示 --stat 中最后的行数修改添加移除统计。</span></span></span><br><span class="line"><span class="ruby">    --name-only  <span class="comment"># 仅在提交信息后显示已修改的文件清单。</span></span></span><br><span class="line"><span class="ruby">    --name-status  <span class="comment"># 显示新增、修改、删除的文件清单。</span></span></span><br><span class="line"><span class="ruby">    --abbrev-commit  <span class="comment"># 仅显示 SHA-1 的前几个字符，而非所有的 40 个字符。</span></span></span><br><span class="line"><span class="ruby">    --relative-date  <span class="comment"># 使用较短的相对时间显示(比如，“2 weeks ago”)</span></span></span><br><span class="line"><span class="ruby">    --pretty=online  <span class="comment"># 将每个提交放在一行显示可用的选项包括 oneline，short，full，fuller 和 format(后跟指定格式)</span></span></span><br><span class="line"><span class="ruby">    --pretty=<span class="symbol">format:</span><span class="string">"%h - %an, %ar : %s"</span></span></span><br><span class="line"><span class="ruby">    --graph (--graph可以看到头多出一些 ASCII 字符串表示的简单图形)</span></span><br></pre></td></tr></table></figure>
+<p>选项说明</p>
+<ul>
+<li>%H&emsp;&emsp;提交对象（commit）的完整哈希字串</li>
+<li>%h&emsp;&emsp;提交对象的简短哈希字串</li>
+<li>%T&emsp;&emsp;树对象（tree）的完整哈希字串</li>
+<li>%t&emsp;&emsp;树对象的简短哈希字串</li>
+<li>%P&emsp;&emsp;父对象（parent）的完整哈希字串</li>
+<li>%p&emsp;&emsp;父对象的简短哈希字串</li>
+<li>%an&emsp;&emsp;作者（author）的名字</li>
+<li>%ae&emsp;&emsp;作者的电子邮件地址</li>
+<li>%ad&emsp;&emsp;作者修订日期（可以用 -date= 选项定制格式）</li>
+<li>%ar&emsp;&emsp;作者修订日期，按多久以前的方式显示</li>
+<li>%cn&emsp;&emsp;提交者(committer)的名字</li>
+<li>%ce&emsp;&emsp;提交者的电子邮件地址</li>
+<li>%cd&emsp;&emsp;提交日期</li>
+<li>%cr&emsp;&emsp;提交日期，按多久以前的方式显示</li>
+<li>%s&emsp;&emsp;提交说明</li>
+</ul>
+<h3 id="git版本回退"><a href="#git版本回退" class="headerlink" title="git版本回退"></a>git版本回退</h3><h4 id="本地分支回退"><a href="#本地分支回退" class="headerlink" title="本地分支回退"></a>本地分支回退</h4><figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看历史版本信息</span></span><br><span class="line">git <span class="built_in">log</span></span><br><span class="line"><span class="comment"># 单行显示</span></span><br><span class="line">git <span class="built_in">log</span> <span class="comment">--pretty=oneline</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 方法一</span></span><br><span class="line"><span class="comment"># 回退上个版本(^ 表示回到上一个版本， ^^表示回到上上一个版本，~10 表示回到前10个版本)</span></span><br><span class="line">git <span class="keyword">reset</span> <span class="comment">--hard HEAD^</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 方法二</span></span><br><span class="line">git <span class="keyword">reset</span> <span class="comment">--hard  版本号</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="假如从第三个版本回退到了第二个版本，又想回到第三个版本"><a href="#假如从第三个版本回退到了第二个版本，又想回到第三个版本" class="headerlink" title="假如从第三个版本回退到了第二个版本，又想回到第三个版本"></a>假如从第三个版本回退到了第二个版本，又想回到第三个版本</h4><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 获取之前的版本号</span></span><br><span class="line"><span class="attr">git</span> <span class="string">reflog</span></span><br><span class="line"><span class="comment"># 回退</span></span><br><span class="line"><span class="attr">git</span> <span class="string">reset --hard 版本号</span></span><br></pre></td></tr></table></figure>
+<h4 id="远程仓库版本回退"><a href="#远程仓库版本回退" class="headerlink" title="远程仓库版本回退"></a>远程仓库版本回退</h4><figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line"><span class="meta"># 本地版本回退后 -f强制远程仓库版本回退</span></span><br><span class="line">git <span class="keyword">push</span> -f</span><br></pre></td></tr></table></figure>
+
+<h3 id="清除所有未跟踪文件，包括纳入ignored的文件"><a href="#清除所有未跟踪文件，包括纳入ignored的文件" class="headerlink" title="清除所有未跟踪文件，包括纳入ignored的文件"></a>清除所有未跟踪文件，包括纳入ignored的文件</h3><figure class="highlight excel"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clean</span> -dxf</span><br><span class="line">git <span class="built_in">clean</span> -<span class="built_in">n</span>  # 显示将要删除的文件和目录</span><br></pre></td></tr></table></figure>
+<h3 id="撤销对已经修改文件的更改"><a href="#撤销对已经修改文件的更改" class="headerlink" title="撤销对已经修改文件的更改"></a>撤销对已经修改文件的更改</h3><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">git checkout filename</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="修改add的文件为未跟踪状态"><a href="#修改add的文件为未跟踪状态" class="headerlink" title="修改add的文件为未跟踪状态"></a>修改add的文件为未跟踪状态</h3><figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">git rm <span class="comment">--cached filename</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="git-commit操作之前文件的三种状态"><a href="#git-commit操作之前文件的三种状态" class="headerlink" title="git commit操作之前文件的三种状态"></a>git commit操作之前文件的三种状态</h3><ul>
+<li>Untracked files  未跟踪 需要 git add filename 来添加跟踪 (一般是新添加文件)</li>
+<li>Changes not staged for commit  表明文件已经修改，但是还没有放入暂区域，也就是没生成快照 (一般是对已经跟踪的文件做了修改，可以用git checkout filename来放弃修改)</li>
+<li>Changes to be committed  可以进行commit的文件</li>
+</ul>
+<h3 id="查看某次提交文件的改动"><a href="#查看某次提交文件的改动" class="headerlink" title="查看某次提交文件的改动"></a>查看某次提交文件的改动</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">git <span class="keyword">show</span>  某次提交的<span class="keyword">hash</span>值  filename</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改-gitignore-文件生效方法"><a href="#修改-gitignore-文件生效方法" class="headerlink" title="修改.gitignore 文件生效方法"></a>修改.gitignore 文件生效方法</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git rm -r --cached .  <span class="comment"># 清除缓存</span></span><br><span class="line">git add . <span class="comment"># 重新trace file</span></span><br><span class="line">git commit -m <span class="string">"update .gitignore"</span> <span class="comment"># 提交和注释</span></span><br><span class="line">git push origin master <span class="comment"># 可选，如果需要同步到remote上的话</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="查看配置信息"><a href="#查看配置信息" class="headerlink" title="查看配置信息"></a>查看配置信息</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">git<span class="built_in"> config </span>--list</span><br></pre></td></tr></table></figure>
+
+<h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><h4 id="分支基本操作"><a href="#分支基本操作" class="headerlink" title="分支基本操作"></a>分支基本操作</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git branch  <span class="comment"># 查看本地分支</span></span><br><span class="line">git branch -r  <span class="comment"># 查看远程所有分支</span></span><br><span class="line">git branch -a  <span class="comment"># 查看本地&amp;远程所有分支</span></span><br><span class="line"></span><br><span class="line">git branch &lt;分支名&gt;  <span class="comment"># 创建分支</span></span><br><span class="line">git checkout -b &lt;分支名&gt;  <span class="comment"># 新建并且切换分支</span></span><br><span class="line">git branch -d &lt;分支名&gt;  <span class="comment"># 删除本地分支</span></span><br><span class="line"></span><br><span class="line">git branch -d -r &lt;分支名&gt;  <span class="comment"># 删除远程分支，推送到服务器</span></span><br><span class="line">git push origin:&lt;分支名&gt;  <span class="comment"># 推送到服务器</span></span><br><span class="line"></span><br><span class="line">git branch -m &lt;旧分支名&gt; &lt;新分支名&gt;  <span class="comment"># 重命名分支</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="获取远程分支代码"><a href="#获取远程分支代码" class="headerlink" title="获取远程分支代码"></a>获取远程分支代码</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 获取远程master分支</span></span><br><span class="line">git fetch origin master</span><br><span class="line"><span class="comment"># 查看更新信息</span></span><br><span class="line">git <span class="built_in">log</span> -p FETCH_HEAD</span><br><span class="line"><span class="comment"># 修改冲突合并</span></span><br><span class="line"><span class="comment"># 合并分支</span></span><br><span class="line">git merge FETCH_HEAD</span><br></pre></td></tr></table></figure>
+<p><strong>git pull命令相当于git fetch + git merge</strong></p>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>docker容器</title>
+    <url>/docker/docker%E5%AE%B9%E5%99%A8/</url>
+    <content><![CDATA[<h2 id="docker容器"><a href="#docker容器" class="headerlink" title="docker容器"></a>docker容器</h2><h3 id="容器，到底是什么？"><a href="#容器，到底是什么？" class="headerlink" title="容器，到底是什么？"></a>容器，到底是什么？</h3><p><em>容器是一种沙盒技术，不同的应用就像一个个集装箱一样，因为有了边界而不至于相互干扰</em></p>
+<p><strong>进程的理解：</strong><br>一个程序运行起来后的计算机执行环境的总和，就是一个进程</p>
+<blockquote>
+<p>对于docker等大多数Linux容器来说, <strong>Cgroups</strong>技术是用来制造约束的主要手段，而<strong>Namespace</strong>技术则是用来修改进程视图的主要方法</p>
+</blockquote>
+<a id="more"></a>
+
+<h3 id="容器和虚拟机的区别"><a href="#容器和虚拟机的区别" class="headerlink" title="容器和虚拟机的区别"></a>容器和虚拟机的区别</h3><ul>
+<li>容器是独立运行的一个或一组应用，以及它们的运行态环境。对应的，虚拟机可以理解为模拟运行的一整套操作系统和跑在上面的应用</li>
+<li>在使用docker时，并没有一个真正的docker容器运行在宿主机里面，docker项目帮助用户启动的，还是原来的应用进程，只不过在创建这些进程时，docker为他们加上了各种各样的Namespace参数</li>
+<li>这些进程就会认为自己时各自PID Namespace里的一号进程，只能看到各自Mount Namespace里挂载的目录和文件，只能访问到各自Network Namespace里的网络设备，就仿佛运行在一个个容器里面，与外面运用隔离</li>
+</ul>
+<p><strong>单进程的意思 不是只能运行一个进程，而是只有一个进程是可控的</strong></p>
+<h3 id="容器的弊端"><a href="#容器的弊端" class="headerlink" title="容器的弊端"></a>容器的弊端</h3><p>有利有弊，基于容器的主要问题就是<strong>隔离的不彻底</strong></p>
+<ul>
+<li>首先，既然容器只是运行在宿主机上的一种特殊的进程，那么多个容器之间使用的就还是同一个宿主机的操作系统内核。</li>
+<li>其次，在Linux内核中，有很多资源和对象是不能被Namespace化的，最典型的例子就是：时间。</li>
+</ul>
+<p><strong>容器作为宿主机上的特殊的进程，也还是需要和其他进程共享宿主机的资源(cpu,内存等)，这显然是不合理的地方</strong></p>
+<p><strong>Linux Cgroups就是Linux内核中用来为进程设置资源限制的一个重要功能</strong></p>
+<blockquote>
+<p>Linux Cgroups的全称是Linux Control Group， 它最主要的作用，就是限制一个进程组能够使用的资源上限，包括CPU，内存，磁盘，网络带宽等等</p>
+</blockquote>
+<h3 id="新建启动容器"><a href="#新建启动容器" class="headerlink" title="新建启动容器"></a>新建启动容器</h3><p>&emsp;&emsp;启动容器的主要命令是docker run，下面的命令输出一个“hello world”，之后终止容器</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ sudo docker run ubuntu:14.04 /bin/<span class="built_in">echo</span> <span class="string">'Hello world'</span></span><br><span class="line">Hello world</span><br></pre></td></tr></table></figure>
 <p>&emsp;&emsp;下面命令启动一个bash终端，允许用户进行交互</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ sudo docker run -t -i ubuntu:14.04 /bin/bash</span><br><span class="line">root@af8bae53bdd3:/<span class="comment">#</span></span><br></pre></td></tr></table></figure>
